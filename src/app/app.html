@@ -1,0 +1,12 @@
+<div *ngIf="currentUser$ | async as user" class="navbar">
+  <mat-toolbar color="primary">
+    <span>Service Request Management System</span>
+    <span class="spacer"></span>
+    <span>Welcome, {{ user.username }}</span>
+    <button mat-icon-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>
+</div>
+
+<router-outlet></router-outlet>

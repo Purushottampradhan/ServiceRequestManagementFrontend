@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Request Details - #{{ request.id }}</h2>
+
+<mat-dialog-content>
+  <div class="detail-group">
+    <label>Title:</label>
+    <p>{{ request.title }}</p>
+  </div>
+
+  <div class="detail-group">
+    <label>Description:</label>
+    <p>{{ request.description || 'N/A' }}</p>
+  </div>
+
+  <div class="detail-group">
+    <label>Status:</label>
+    <mat-chip [ngClass]="'status-' + request.status.toLowerCase()">
+      {{ request.status }}
+    </mat-chip>
+  </div>
+
+  <div class="detail-group">
+    <label>Created By:</label>
+    <p>{{ request.createdBy }}</p>
+  </div>
+
+  <div class="detail-group">
+    <label>Created Date:</label>
+    <p>{{ request.createdDate | date: 'medium' }}</p>
+  </div>
+
+  <div *ngIf="request.updatedDate" class="detail-group">
+    <label>Updated By:</label>
+    <p>{{ request.updatedBy || 'N/A' }}</p>
+  </div>
+
+  <div *ngIf="request.updatedDate" class="detail-group">
+    <label>Updated Date:</label>
+    <p>{{ request.updatedDate | date: 'medium' }}</p>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="primary" (click)="onClose()">Close</button>
+</mat-dialog-actions>
