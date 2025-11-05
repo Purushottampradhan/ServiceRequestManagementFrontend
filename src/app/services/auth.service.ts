@@ -4,11 +4,11 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
 import { LoginRequest, AuthResponse, User } from '../models/auth.model';
 
-@Injectable({
+@Injectable({ 
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:5001/api/auth';
+  private apiUrl = 'https://servicerequestbackend-1.onrender.com/api/auth';
   private currentUserSubject: BehaviorSubject<User | null>;
   public currentUser$: Observable<User | null>;
 

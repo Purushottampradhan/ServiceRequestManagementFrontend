@@ -7,7 +7,7 @@ import { ServiceRequest, ServiceRequestFilter } from '../models/service-request.
   providedIn: 'root'
 })
 export class ServiceRequestService {
-  private apiUrl = 'http://localhost:5001/api/servicerequests';
+  private apiUrl = 'https://servicerequestbackend-1.onrender.com/api/servicerequests';
 
   constructor(private http: HttpClient) { }
 
